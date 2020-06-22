@@ -1,0 +1,95 @@
+/**Registration css**/
+.registration-Container{
+    margin:0;
+      padding:0;
+      background-size: cover;
+      font-family: sans-serif;
+    height: 56em;
+    background-image: url("../assets/seeimage.png");
+  }
+  .registerBox{
+      position: absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%);
+      width: 400px;
+      height: 580px;
+      padding: 80px 40px;
+      box-sizing:border-box;
+      background:rgba(0,0,0,0.5)
+  }
+  h2{
+      margin: 0;
+      padding: 0 0 20px;
+      color: #efed40;
+      text-align: center;
+  }
+  h3{
+      color: #efed40;
+  }
+  .registerBox p{
+      margin: 0;
+      padding: 0;
+      font-weight: bold;
+      color: #fff;
+  }
+  .registerBox input{
+      width: 100%;
+      margin-bottom: 20px;
+  }
+  .registerBox input[type="text"],
+  .registerBox input[type="password"]
+  {
+      border: none;
+      border-bottom: 1px solid #fff;
+      background: transparent;
+      outline: none;
+      height: 40px;
+      color: #fff;
+      font-size: 16px;
+  }
+  ::placeholder
+  {
+      color:rgba(255,255,255,.5);
+  }
+  .registerBox button[type="submit"]
+  {
+      border: none;
+      background: #ff267e;
+      outline: none;
+      height: 40px;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 20px;
+  }
+  .registerBox button[type="submit"]:hover
+  {
+      background: #efed40;
+      color: #262626;
+  }
+  .registerBox a{
+      color:#fff;
+  }
+  
+  .registerBox button[type="login"]
+  {
+      border: none;
+      background: #ff267e;
+      outline: none;
+      height: 40px;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 20px;
+  }
+  .registerBox button[type="login"]:hover
+  {
+      background: #efed40;
+      color: #262626;
+  }
+  .registerBox button{
+      width: 100%;
+      margin-bottom: 20px;
+  }
+  

@@ -5,7 +5,6 @@ const Context = React.createContext();
 class ChatProvider extends Component {
     state = {
         users: usersDetails,
-        // detailProduct: productDetails,
     }
 
     render() {

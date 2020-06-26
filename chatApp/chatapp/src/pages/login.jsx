@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import { IconButton, Snackbar } from '@material-ui/core';
-// import Alert from '@material-ui/lab/Alert';
 import CloseIcon from '@material-ui/icons/Close'
 import '../css/login.css'
 import AccountImage from '../assets/account.png'
+import { userLogin } from '../services/userServices'
 class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            email: "",
-            password: "",
+            Email: "",
+            Password: "",
             snackbarOpen: false,
             snackbarMsg: "",
         }
@@ -18,50 +18,54 @@ class Login extends Component {
         this.setState({ snackbarOpen: false })
     }
     handleEmailChange = (event) => {
-        const email = event.target.value;
+        const Email = event.target.value;
+        console.log('email', Email)
         this.setState({
-            email: email
+            Email: Email
         })
     }
-    handleVisibility = () => {
-        this.setState({
-            visible: !this.state.visible
-        });
-    };
     handlePasswordChange = (event) => {
-        const password = event.target.value;
+        const Password = event.target.value;
+        console.log('password', Password)
         this.setState({
-            password: password
+            Password: Password
         })
     }
-    handleSubmit = () => {
-        if (this.state.email === "") {
+    handleSubmit = (id) => {
+        if (this.state.Email === "") {
             this.setState({
                 snackbarOpen: true,
                 snackbarMsg: "Email cann't be empty..!!"
             })
-        } else if (!/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/.test(this.state.email)) {
+        } else if (!/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/.test(this.state.Email)) {
             this.setState({
                 snackbarOpen: true,
                 snackbarMsg: "Invalid Email..!"
             })
-        } else if (this.state.password === "") {
+        } else if (this.state.Password === "") {
             this.setState({
                 snackbarOpen: true,
                 snackbarMsg: "Password cann't be empty..!!"
             })
-        } else if (this.state.password.length < 6) {
+        } else if (this.state.Password.length < 6) {
             this.setState({
                 snackbarOpen: true,
                 snackbarMsg: "password must be of atleast 6 characters..!!"
             })
-            .catch((err) => {
-                this.setState({
-                    openSnackBar: true,
-                    snackbarMsg: 'Email or password incorrect'
-                })
+        } else {
+            let data = {
+                'Email': this.state.Email,
+                'Password': this.state.Password
+            }
+            userLogin(data)
+            console.log('login data', data)
+            this.setState({
+                snackbarOpen: true,
+                snackbarMsg: "Login successfully!!"
             })
+            console.log('login successfully', data)
         }
+        this.props.history.push('/dashboard')
     }
     render() {
         return (
@@ -89,8 +93,7 @@ class Login extends Component {
                     <input
                         type="text"
                         placeholder="Enter Username"
-                        fullWidth
-                        value={this.state.email}
+                        value={this.state.Email}
                         onChange={this.handleEmailChange}></input>
                     <p>Password</p>
                     <input
@@ -98,10 +101,9 @@ class Login extends Component {
                         name="password"
                         placeholder="Password*"
                         margin="normal"
-                        fullWidth
-                        value={this.state.password}
+                        value={this.state.Password}
                         onChange={this.handlePasswordChange}>
-                        </input>
+                    </input>
                     <button
                         type="submit"
                         value="Sign in"

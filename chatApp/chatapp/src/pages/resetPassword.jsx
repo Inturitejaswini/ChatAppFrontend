@@ -2,28 +2,43 @@ import React, { Component } from 'react';
 import { IconButton, Snackbar } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close'
 import AccountImage from '../assets/account.png'
+import {resetPassword} from '../services/userServices'
 import '../css/resetPassword.css'
 class ResetPassword extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            Email: this.Email,
+            newEmail: this.newEmail,
+            _id:""
         }
     }
     snackbarClose = (e) => {
         this.setState({ snackbarOpen: false })
     }
     handleEmailChange = (event) => {
-        const email = event.target.value;
-        this.setState({ email: email })
+        const newEmail = event.target.value;
+        this.setState({ newEmail: newEmail })
     }
-    handleResetPassword = () => {
-        if (!/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/.test(this.state.email)) {
+    handleResetPassword = (event) => {
+        event.preventDefault()
+        if (!/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/.test(this.state.newEmail)) {
             this.setState({
                 snackbarOpen: true,
                 snackbarMsg: "Invalid Email..!"
             })
-        } 
+        } else{
+            let data = {
+                 'newEmail': this.state.newEmail,
+                 '_id':this.state._id
+             }
+             resetPassword(data)
+             console.log('resetpassword data data',data)
+                 this.setState({
+                     snackbarOpen: true,
+                     snackbarMsg: "resetpassword successfully!!"
+                 })
+                 console.log('reset successfully',data)
+     }
     }
     render() {
         return (
@@ -38,9 +53,7 @@ class ResetPassword extends Component {
                     onClose={this.snackbarClose}
                     message={<span id="message-id">{this.state.snackbarMsg}</span>}
                     action={[
-                        <IconButton
-                            onClick={this.handleClose}
-                        >
+                        <IconButton onClick={this.handleClose}>
                             <CloseIcon onClick={this.snackbarClose} />
                         </IconButton>
                     ]}
@@ -53,8 +66,7 @@ class ResetPassword extends Component {
                         <input
                             type="text"
                             placeholder="Enter Your Email"
-                            fullWidth
-                            value={this.state.email}
+                            value={this.state.newEmail}
                             onChange={this.handleEmailChange} />
                         <button type="submit" value="Reset Password" onClick={this.handleResetPassword}>Reset Password</button>
                     </form>

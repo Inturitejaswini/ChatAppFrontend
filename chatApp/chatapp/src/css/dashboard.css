@@ -1,0 +1,55 @@
+.dashboard-Container{
+    margin:0;
+	padding:0;
+	background-size: cover;
+	font-family: sans-serif;
+    height: 67em;
+    background-image: url('../assets/see.png');
+}
+.manuIcon{
+    margin-right: 16px;
+    color: white;
+}
+.groupIcon-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: end;
+}
+.formOutlinedIcon-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: end;
+    margin-top: 15px;
+}
+.phoneIcon-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: end;
+    margin-top: 15px;
+}
+.invitationIcon-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: end;
+    margin-top: 15px;
+}
+.users-Box{
+    position: absolute;
+    top: 59%;
+    left: 17%;
+    transform: translate(-50%,-50%);
+    width: 455px;
+    height: 55em;
+    padding: 80px 40px;
+    box-sizing: border-box;
+    background: white;
+}
+
+.navbar{
+    background-color: blue;
+    height: 57px;
+}

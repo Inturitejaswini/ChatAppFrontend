@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-// import { dataProducts } from './appData';
+import {usersDetails} from  '../usersList';
 const Context = React.createContext();
 
 class ChatProvider extends Component {
     state = {
-        products: dataProducts,
+        users: usersDetails,
         // detailProduct: productDetails,
     }
 
@@ -19,5 +19,5 @@ class ChatProvider extends Component {
     }
 }
 
-const ChatConsumer = Context.Consumer;
+const ChatConsumer = Context.Consumer
  export {ChatProvider,ChatConsumer};

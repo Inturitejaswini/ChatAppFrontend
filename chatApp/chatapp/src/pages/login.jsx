@@ -65,7 +65,7 @@ class Login extends Component {
             })
             console.log('login successfully', data)
         }
-        this.props.history.push('/dashboard')
+        this.props.history.push('/nav')
     }
     render() {
         return (

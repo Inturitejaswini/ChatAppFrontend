@@ -1,10 +1,35 @@
 .dashboard-Container{
     margin:0;
 	padding:0;
-	background-size: cover;
-	font-family: sans-serif;
-    height: 67em;
+	/* background-size: cover; */
+	/* font-family: sans-serif; */
+    /* height: 67em; */
     background-image: url('../assets/see.png');
+}
+.chatapp-text {
+    color: white;
+    font-size: x-large;
+}
+.container-box {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%,-50%);
+    width: 401px;
+    /* padding: 80px 40px; */
+    box-sizing: border-box;
+    background: rgba(0,0,0,0.5);
+}
+.users{
+    display: flex;
+    flex-direction: row;
+}
+.image{
+    width: 18%;
+    /* border-top-left-radius: calc(.25rem - 1px); */
+    /* border-top-right-radius: calc(.25rem - 1px); */
+    height: 42px;
+    border-radius: 34px;
 }
 .manuIcon{
     margin-right: 16px;

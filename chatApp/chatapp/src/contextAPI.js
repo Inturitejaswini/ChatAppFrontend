@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import {usersDetails} from  '../usersList';
-const Context = React.createContext();
+import { usersDetails } from  './usersData';
+const ChatContext = React.createContext();
 
 class ChatProvider extends Component {
     state = {
@@ -9,14 +9,14 @@ class ChatProvider extends Component {
 
     render() {
         return (
-            <Context.Provider value={{
+            <ChatContext.Provider value={{
                 ...this.state
             }}>
                 {this.props.children}
-            </Context.Provider>
+            </ChatContext.Provider>
         )
     }
 }
 
-const ChatConsumer = Context.Consumer
+const ChatConsumer = ChatContext.Consumer
  export {ChatProvider,ChatConsumer};

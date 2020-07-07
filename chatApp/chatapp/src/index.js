@@ -5,7 +5,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 // export * from './context/contextAPI'
-import {ChatProvider} from './context/contextAPI'
+import {ChatProvider} from './contextAPI'
 ReactDOM.render(
   <ChatProvider>
     <Router>

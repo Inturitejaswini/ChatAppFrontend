@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { ChatConsumer } from '../contextAPI'
-import { Col, Button, Card, Row } from 'react-bootstrap'
+import { Col, Card, Row } from 'react-bootstrap'
+import {Button} from '@material-ui/core'
 import { Link } from 'react-router-dom'
 import '../css/nav.css'
 class Chat extends Component {
@@ -8,16 +9,16 @@ class Chat extends Component {
     render() {
         const { id, title, img } = this.props.users;
         return (
-            <div className="chatContainer">
+            <div className="chat-Container">
                 <ChatConsumer>
                     {(value) => (
                         <div className="users">
-                        {/* <Card onClick={() => { value.handleDetails(id) }} > */}
+                            <Button className="users-btn">
                             <Link>
-                                <Card.Img  src={img} className="image"/>
+                                <Card.Img src={img} className="image" />
                             </Link>
-                        {/* </Card> */}
-                        <div>{title}</div> 
+                            <div className="title">{title}</div>
+                            </Button> 
                         </div>
                     )}
                 </ChatConsumer>

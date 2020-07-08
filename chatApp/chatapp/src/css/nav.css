@@ -1,14 +1,20 @@
 .dashboard-Container{
     margin:0;
 	padding:0;
-	/* background-size: cover; */
-	/* font-family: sans-serif; */
-    /* height: 67em; */
+	background-size: cover;
+	font-family: sans-serif;
+    height: 75em;
     background-image: url('../assets/see.png');
 }
 .chatapp-text {
     color: white;
     font-size: x-large;
+}
+h3 {
+    color: black;
+    margin-inline-start: 4em;
+    margin-block-start: 1em;
+    text-transform: capitalize;
 }
 .container-box {
     position: absolute;
@@ -18,18 +24,35 @@
     width: 401px;
     /* padding: 80px 40px; */
     box-sizing: border-box;
-    background: rgba(0,0,0,0.5);
+    background: white;}
+.title{
+    display: flex;
+    /* flex-direction: inherit; */
+    font-weight: bold;
+    font-size: larger;
+    margin-block-start: 4px;
+    text-transform: capitalize;
 }
 .users{
     display: flex;
     flex-direction: row;
 }
+.users-btn{
+    width: 30em;
+    height: 7em;
+}
+.users-btn a{  
+    margin-inline-start: -2em;
+    margin-bottom: 1em;
+}
 .image{
-    width: 18%;
+    width: 30%;
     /* border-top-left-radius: calc(.25rem - 1px); */
     /* border-top-right-radius: calc(.25rem - 1px); */
-    height: 42px;
+    height: 72px;
     border-radius: 34px;
+    margin-block-start: 17px;
+    margin-inline-start: 25px;
 }
 .manuIcon{
     margin-right: 16px;

@@ -26,7 +26,6 @@ class UsersList extends Component {
                         }}
                     </ChatConsumer>
                 </div>
-                {/* </Card> */}
             </div>
         );
     }

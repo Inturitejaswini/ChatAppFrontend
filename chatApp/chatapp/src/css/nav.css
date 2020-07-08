@@ -16,6 +16,9 @@ h3 {
     margin-block-start: 1em;
     text-transform: capitalize;
 }
+.popover {
+    border: 2px dotted red;
+  }
 .container-box {
     position: absolute;
     top: 50%;
